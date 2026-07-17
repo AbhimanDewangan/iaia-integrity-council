@@ -6,14 +6,15 @@ import { ethicsAgent } from "../../../../agents/ethics";
 import { chiefAgent } from "../../../../agents/chief";
 
 export async function POST(req: Request) {
-  const { text } = await req.json();
+  try {
+    const { text } = await req.json();
 
-  const citation = await citationAgent(text);
-  const evidence = await evidenceAgent(text);
-  const plagiarism = await plagiarismAgent(text);
-  const ethics = await ethicsAgent(text);
+    const citation = await citationAgent(text);
+    const evidence = await evidenceAgent(text);
+    const plagiarism = await plagiarismAgent(text);
+    const ethics = await ethicsAgent(text);
 
-  const reports = `
+    const reports = `
 Citation Officer:
 ${citation}
 
@@ -27,13 +28,26 @@ Ethics Officer:
 ${ethics}
 `;
 
-  const finalReport = await chiefAgent(reports);
+    const finalReport = await chiefAgent(reports);
 
-  return NextResponse.json({
-    citation,
-    evidence,
-    plagiarism,
-    ethics,
-    finalReport,
-  });
+    return NextResponse.json({
+      citation,
+      evidence,
+      plagiarism,
+      ethics,
+      finalReport,
+    });
+
+  } catch (error) {
+    console.error("Analysis Error:", error);
+
+    return NextResponse.json(
+      {
+        error: "AI Council failed to complete analysis.",
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }
