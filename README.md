@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IAIA Integrity Council AI Agent
 
-## Getting Started
+<p align="center">
+  <b>A Multi-Agent AI System for Academic Integrity Evaluation</b>
+</p>
 
-First, run the development server:
+---
+
+## 📌 Overview
+
+The **IAIA Integrity Council AI Agent** is a multi-agent artificial intelligence system designed to evaluate academic content through the perspective of different specialized AI officers.
+
+Inspired by a C-suite organizational structure, each AI agent acts as an expert officer with a specific responsibility. These independent analyses are then synthesized by a final **Chief Integrity Officer (CEO Agent)**, which provides the overall assessment.
+
+The goal is to demonstrate how multiple AI agents can collaborate to solve complex evaluation tasks.
+
+---
+
+# 🏛️ AI Council Architecture
+                User Input
+                    |
+                    ↓
+
+    ┌─────────────────────────────┐
+    │     AI Integrity Council     │
+    └─────────────────────────────┘
+
+          ↓        ↓        ↓        ↓
+
+    Citation   Evidence  Plagiarism  Ethics
+    Officer    Officer    Officer   Officer
+
+          ↓        ↓        ↓        ↓
+
+          └────────┬─────────┘
+                   ↓
+
+          Chief Integrity Officer
+                (CEO Agent)
+
+                   ↓
+
+          Final Integrity Report
+
+
+---
+
+# 🤖 AI Officers
+
+## 📚 Citation Officer
+
+Responsible for:
+- Identifying claims requiring citations
+- Detecting unsupported statements
+- Evaluating citation requirements
+
+---
+
+## 🔍 Evidence Officer
+
+Responsible for:
+- Evaluating factual accuracy
+- Checking logical consistency
+- Identifying unsupported conclusions
+
+---
+
+## 📝 Plagiarism Officer
+
+Responsible for:
+- Detecting possible copied content
+- Identifying suspicious paraphrasing
+- Evaluating originality concerns
+
+---
+
+## ⚖️ Ethics Officer
+
+Responsible for:
+- Evaluating academic integrity concerns
+- Identifying ethical violations
+- Reviewing responsible AI usage
+
+---
+
+## 👑 Chief Integrity Officer (CEO Agent)
+
+Responsible for:
+- Reviewing all officer reports
+- Synthesizing findings
+- Producing the final academic integrity assessment
+
+---
+
+# ⚙️ Technology Stack
+
+### Frontend
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+### AI Integration
+- Groq API
+- OpenAI-compatible API architecture
+
+### Development
+- Node.js
+- Git & GitHub
+
+---
+
+# 🚀 Features
+
+✅ Multi-agent AI workflow  
+✅ Specialized AI officer roles  
+✅ CEO-level final synthesis  
+✅ Academic integrity evaluation  
+✅ Modern animated dashboard UI  
+✅ Markdown-based AI responses  
+✅ Secure API key handling through environment variables  
+
+---
+
+# 📂 Project Structure
+iaia-integrity-council/
+
+├── agents/
+│ ├── citation.ts
+│ ├── evidence.ts
+│ ├── plagiarism.ts
+│ ├── ethics.ts
+│ └── chief.ts
+│
+├── lib/
+│ ├── groq.ts
+│ ├── gemini.ts
+│ └── openrouter.ts
+│
+├── src/
+│ └── app/
+│ ├── api/
+│ │ └── analyze/
+│ │ └── route.ts
+│ │
+│ ├── page.tsx
+│ └── layout.tsx
+│
+├── public/
+├── package.json
+└── README.md
+
+---
+
+# 🛠️ Installation
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/AbhimanDewangan/iaia-integrity-council.git
